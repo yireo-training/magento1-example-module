@@ -1,0 +1,34 @@
+<config>
+    <modules>
+        <Foo_Bar>
+            <version>0.0.1</version>
+        </Foo_Bar>
+    </modules>
+    <global>
+        <helpers>
+            <foobar>
+                <class>Foo_Bar_Helper</class>
+            </foobar>
+        </helpers>
+        <models>
+            <catalog>
+                <rewrite>
+                    <product>Foo_Bar_Model_Rewrite_Product</product>
+                </rewrite>
+            </catalog>
+        </models>
+        </global>
+    <frontend>
+        <events>
+            <customer_login>
+                <observers>
+                    <foobar_do_something_on_login>
+                        <type>singleton</type>
+                        <class>Foo_Bar_Observer_DoSomethingOnLogin</class>
+                        <method>execute</method>
+                    </foobar_do_something_on_login>
+                </observers>
+            </customer_login>
+        </events>
+    </frontend>
+</config>
